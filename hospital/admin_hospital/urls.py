@@ -1,0 +1,35 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+        path('', views.Home, name='home'),
+        path("contact/",views.Contact,name='contact'),
+        path("about/",views.About,name='about'),
+        path("doctor_list/",views.Doctor_List,name='doctor_list'),
+        path("appointment/",views.Appointment_Page,name='appointment'),
+        path("service/",views.Service,name='service'),
+        path("login/",views.Login,name='login'),
+        path('logout/', views.Logout, name='logout'),
+        path('register_admin/', views.register_admin, name='register_admin'), 
+        path('register_doctor/', views.register_doctor, name='register_doctor'), 
+        path('register_patient/', views.register_patient, name='register_patient'), 
+        path('admin_dashboard/', views.admin_dashboard, name='admin_dashboard'),
+        path('doctor_dashboard/', views.doctor_dashboard, name='doctor_dashboard'),
+        path('patient_dashboard/', views.patient_dashboard, name='patient_dashboard'),
+        path('add_doctor',views.Add_Doctor,name='add_doctor'),
+        path('view_doctor',views.View_Doctor,name='view_doctor'),
+        path('delete_doctor/<int:pid>/', views.Delete_Doctor, name='delete_doctor'),
+        path('add_patient',views.Add_Patient,name='add_patient'),
+        path('view_patient',views.View_Patient,name='view_patient'),
+        path("delete_patient/<int:pid>/",views.Delete_Patient,name='delete_patient'),
+        path("view_appointment/",views.View_Appointment,name='view_appointment'),
+        path("add_appointment/",views.Add_Appointment,name='add_appointment'),
+        path("delete_appointment/<int:pid>/",views.Delete_Appointment,name='delete_appointment'),
+        path('create_checkout_session/',views.create_checkout_session,name='create_checkout_session'),
+        path('success/',views.success,name='success'),
+        path('cancel/',views.cancel,name='cancel'),
+        path('add-medical/', views.Add_Medical, name='add_medical'),
+        path('view-medical/', views.View_Medical, name='view_medical'),
+        path('delete-medical/<int:pid>/', views.Delete_Medical, name='delete_medical'),
+
+]
