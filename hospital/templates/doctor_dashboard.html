@@ -94,10 +94,18 @@
     </div>
     <!-- Navbar End -->
 
+    {% if messages %}
+    <div class="alert alert-info">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
 
     <h2 class="text-center">Doctor Dashboard</h2>
     <div style="display: flex;">
-        <div class="container" style="margin-top: 50px; margin-left:180px">
+        <div class="container" style="margin-top: 50px;">
             <div class="card" style="width: 18rem">
               <img
                 src="{% static 'img/admin.webp' %}"
@@ -124,7 +132,7 @@
               />
               <div class="card-body">
                 <h5 class="card-title">Patient</h5>
-                
+                <a class="btn btn-primary" href="{% url 'add_patient' %}" style="text-color:white">Add Patient</a><br/><br/>
                 <a class="btn btn-primary" style="text-color:white"  href="{% url 'view_patient' %}">View Patients List</a>
                 
               </div>
@@ -143,6 +151,23 @@
                 <h5 class="card-title">Medical</h5>
                 <a class="btn btn-primary" style="text-color:white"  href="{% url 'add_medical' %}">Add Medical Details</a><br/><br/>
                 <a class="btn btn-primary" style="text-color:white"  href="{% url 'view_medical' %}">View Medical Details</a>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="container" style="margin-top: 50px; ">
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'img/admin.webp' %}"
+                class="card-img-top"
+                alt="..."
+                style="height: 250px; object-fit: cover;"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Doctor</h5>
+                <a class="btn btn-primary" style="text-color:white"  href="{% url 'add_doctor' %}">Add Doctor Details</a><br/><br/>
+                <a class="btn btn-primary" style="text-color:white"  href="{% url 'view_doctor' %}">View Doctor Details</a>
                 
               </div>
             </div>

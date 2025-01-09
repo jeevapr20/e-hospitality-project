@@ -70,6 +70,14 @@
     <!-- Topbar End -->
 
 
+    {% if messages %}
+    <div class="alert alert-info">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top bg-white shadow-sm mb-5">
         <div class="container">

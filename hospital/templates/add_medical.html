@@ -93,6 +93,15 @@
         </div>
     </div>
     <!-- Navbar End -->
+
+    {% if messages %}
+    <div class="alert alert-info">
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+  
     <form method="POST" class="text-center">
         {% csrf_token %}
         
